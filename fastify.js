@@ -41,6 +41,16 @@ fastify.get('/candidates/search', (req, res) => {
   }
   if (req.query.skills) {
     const skillsArr = req.query.skills.split(',')
+    let bestSkillsNumber = 0
+    let bestCandidateIndex
+    candidates.forEach((candidate, index) => {
+      const skillsNumber = skillsArr.filter(skill => candidate.skills.includes(skill)).length
+      if (skillsNumber > bestSkillsNumber) {
+        bestSkillsNumber = skillsNumber
+        bestCandidateIndex = index
+      }
+    })
+    bestCandidateIndex >= 0 ? res.send(candidates[bestCandidateIndex]) : res.code(404).send('No candidates found for these skills')
   }
 })
 

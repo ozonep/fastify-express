@@ -28,6 +28,19 @@ app.get('/candidates/search', function (req, res) {
     const candidate = candidates.find(cand => cand.id === req.query.id)
     candidate ? res.send(candidate) : res.status(404).send('Not found')
   }
+  if (req.query.skills) {
+    const skillsArr = req.query.skills.split(',')
+    let bestSkillsNumber = 0
+    let bestCandidateIndex
+    candidates.forEach((candidate, index) => {
+      const skillsNumber = skillsArr.filter(skill => candidate.skills.includes(skill)).length
+      if (skillsNumber > bestSkillsNumber) {
+        bestSkillsNumber = skillsNumber
+        bestCandidateIndex = index
+      }
+    })
+    bestCandidateIndex >= 0 ? res.send(candidates[bestCandidateIndex]) : res.status(404).send('No candidates found for these skills')
+  }
 })
 
 // This route is ONLY for benchmarking, since AutoCannon doesn't work with queries
