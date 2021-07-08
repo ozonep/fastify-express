@@ -1,0 +1,73 @@
+openapi: 3.1.0
+info:
+  title: CandidateAPI
+  version: '1.0'
+  summary: This is a spec for Contentful Candidate API
+  description: This OpenAPI spec serves as a basic description of all available routes and data flow.
+  contact:
+    name: Ivan Malkov
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /canidates/search:
+    parameters: []
+    get:
+      summary: Get Candidate Info
+      description: Find the candidate based on id or skillset.
+      operationId: get-candidate
+      responses:
+        '200':
+          description: 200 OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Candidate'
+        '404':
+          description: Appropriate candidate wasn't found
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: skills
+          description: Search for the best candidate based on needed skills
+        - schema:
+            type: string
+          in: query
+          name: id
+          description: Find specific candidate by his id
+  /candidates:
+    parameters: []
+    post:
+      summary: Create New Candidate
+      description: Create a new candidate.
+      operationId: post-candidate
+      responses:
+        '201':
+          description: Candidate Created
+          headers: {}
+      requestBody:
+        description: Post the necessary fields for the API to create a new candidate.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Candidate'
+components:
+  schemas:
+    Candidate:
+      title: Candidate
+      type: object
+      description: Candidate Model
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the given candidate.
+        name:
+          type: string
+        skills:
+          type: array
+          items:
+            type: string
+      required:
+        - id
+        - name
+        - skills
