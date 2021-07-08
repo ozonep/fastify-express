@@ -1,9 +1,7 @@
 import Fastify from 'fastify'
 import fastifyCors from 'fastify-cors'
 
-const fastify = Fastify({
-  logger: true
-})
+const fastify = Fastify();
 
 fastify.register(fastifyCors, {})
 
@@ -32,7 +30,7 @@ fastify.post(
   { schema: { body: { $ref: 'candidateSchema#' } } },
   (req, res) => {
     candidates.push(req.body)
-    res.code(201).send()
+    res.code(201).send('All ok!')
   }
 )
 
@@ -43,7 +41,14 @@ fastify.get('/candidates/search', (req, res) => {
   }
   if (req.query.skills) {
     const skillsArr = req.query.skills.split(',')
+
   }
+})
+
+// This route is ONLY for benchmarking, since AutoCannon doesn't work with queries
+fastify.get('/candidates/search/:candId', (req, res) => {
+  const candidate = candidates.find(cand => cand.id === req.params.candId)
+  candidate ? res.send(candidate) : res.code(404).send('Not found')
 })
 
 fastify.listen(process.env.HTTP_PORT || 3000, (err, address) => {
