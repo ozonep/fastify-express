@@ -2,6 +2,7 @@
   "name": "fastify-express",
   "version": "1.0.0",
   "description": "Comparing Express.js and Fastify",
+  "type": "module",
   "main": "fastify.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/ozonep/fastify-express#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "fastify": "^3.18.1",
     "fastify-cors": "^6.0.1"
   }
