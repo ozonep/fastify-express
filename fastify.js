@@ -1,7 +1,7 @@
 import Fastify from 'fastify'
 import fastifyCors from 'fastify-cors'
 
-const fastify = Fastify();
+const fastify = Fastify()
 
 fastify.register(fastifyCors, {})
 
@@ -41,7 +41,6 @@ fastify.get('/candidates/search', (req, res) => {
   }
   if (req.query.skills) {
     const skillsArr = req.query.skills.split(',')
-
   }
 })
 
