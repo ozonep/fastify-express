@@ -1,0 +1,23 @@
+{
+  "name": "fastify-express",
+  "version": "1.0.0",
+  "description": "Comparing Express.js and Fastify",
+  "main": "fastify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozonep/fastify-express.git"
+  },
+  "author": "Ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ozonep/fastify-express/issues"
+  },
+  "homepage": "https://github.com/ozonep/fastify-express#readme",
+  "dependencies": {
+    "fastify": "^3.18.1",
+    "fastify-cors": "^6.0.1"
+  }
+}
