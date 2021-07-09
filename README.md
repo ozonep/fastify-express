@@ -69,6 +69,13 @@ RESULTS:
 28% decrease in bundle size
 ```
 ---
+### RELEASE DATES:
+
+Last version of Express.js was released *2 years ago*.
+
+Last version of Fastify.js was released *10 hours ago*. With regular updates and support from community (I also contributed to Fastify development).
+
+
 ### FINAL NOTE:
 
 Not sure about production stack, but in case "node-fetch", "isomorphic-fetch" or similar packages 
