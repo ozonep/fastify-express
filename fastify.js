@@ -30,7 +30,7 @@ fastify.post(
   { schema: { body: { $ref: 'candidateSchema#' } } },
   (req, res) => {
     candidates.push(req.body)
-    res.code(201).send('All ok!')
+    res.code(201).send('Added entry!')
   }
 )
 

@@ -20,7 +20,7 @@ app.post('/candidates', function (req, res) {
     name: req.body.name,
     skills: req.body.skills
   })
-  res.send('All ok!')
+  res.status(201).send('Added entry!')
 })
 
 app.get('/candidates/search', function (req, res) {
