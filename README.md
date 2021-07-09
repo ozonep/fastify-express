@@ -42,3 +42,19 @@ Fastify.js:
 Tested locally on:
 Macbook Air M1 with 16Gb RAM
 Node.js 16.4.2
+
+
+BUNDLE SIZES (based on bundlephobia.com):
+
+Express.js:
+
+541.1 kB Minified
+
+219.7 kB Minified + GZipped
+
+
+Fastify.js:
+
+386.8 kB Minified
+
+106.5 kB Minified + GZipped
