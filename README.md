@@ -38,6 +38,13 @@ where "-c" is number of connections, "-d" is duration in seconds, and "-p" is nu
 └───────────┴─────────┴─────────┴─────────┴─────────┴───────────┴────────┴─────────┘
 ```
 
+RESULTS:
+```
+83% decrease in latency
+460% increase in number of requests per second
+385% increase in bytes per second
+```
+
 Tested locally on:
 Macbook Air M1 with 16Gb RAM
 Node.js 16.4.2
@@ -55,6 +62,11 @@ Fastify.js:
 ```
 386.8 kB Minified
 106.5 kB Minified + GZipped
+```
+
+RESULTS:
+```
+28% decrease in bundle size
 ```
 ---
 ### FINAL NOTE:
