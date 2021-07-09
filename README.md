@@ -43,7 +43,7 @@ Tested locally on:
 Macbook Air M1 with 16Gb RAM
 Node.js 16.4.2
 
-
+---
 BUNDLE SIZES (based on bundlephobia.com):
 
 Express.js:
@@ -58,3 +58,12 @@ Fastify.js:
 386.8 kB Minified
 
 106.5 kB Minified + GZipped
+
+---
+FINAL NOTE:
+
+Not sure about production stack, but in case "node-fetch", "isomorphic-fetch" or similar packages 
+are being used on back-end for making requests, performance can be increased even further by replacing 
+these packages with "Undici":
+https://undici.nodejs.org
+Written by Node.js maintainer Matteo Collina, it improves HTTP performance by 140-1300% (yes, 1300%).
