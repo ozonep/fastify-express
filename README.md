@@ -1,5 +1,4 @@
-# fastify-express
-Comparing Express.js and Fastify.js using the same request.
+# Express.js vs Fastify.js (performance, bundle size)
 
 Each framework was tested with Autocannon by running:
 ```
@@ -7,7 +6,7 @@ autocannon -c 100 -d 60 -p 10 --warmup [ -c 5 -d 5 ] localhost:3000/candidates/s
 ```
 where "-c" is number of connections, "-d" is duration in seconds, and "-p" is number of pipelined requests.
 
-Express.js:
+### Express.js:
 ```
 ┌─────────┬───────┬───────┬───────┬───────┬──────────┬──────────┬────────┐
 │ Stat    │ 2.5%  │ 50%   │ 97.5% │ 99%   │ Avg      │ Stdev    │ Max    │
@@ -23,7 +22,7 @@ Express.js:
 └───────────┴─────────┴─────────┴────────┴─────────┴──────────┴────────┴─────────┘
 ```
 
-Fastify.js:
+### Fastify.js:
 ```
 ┌─────────┬──────┬──────┬───────┬───────┬─────────┬─────────┬───────┐
 │ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%   │ Avg     │ Stdev   │ Max   │
@@ -44,23 +43,21 @@ Macbook Air M1 with 16Gb RAM
 Node.js 16.4.2
 
 ---
-BUNDLE SIZES (based on bundlephobia.com):
+### BUNDLE SIZES (based on bundlephobia.com):
 
 Express.js:
-
+```
 541.1 kB Minified
-
 219.7 kB Minified + GZipped
-
+```
 
 Fastify.js:
-
+```
 386.8 kB Minified
-
 106.5 kB Minified + GZipped
-
+```
 ---
-FINAL NOTE:
+### FINAL NOTE:
 
 Not sure about production stack, but in case "node-fetch", "isomorphic-fetch" or similar packages 
 are being used on back-end for making requests, performance can be increased even further by replacing 
