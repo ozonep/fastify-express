@@ -46,8 +46,10 @@ RESULTS:
 ```
 
 Tested locally on:
+```
 Macbook Air M1 with 16Gb RAM
 Node.js 16.4.2
+```
 
 ---
 ### BUNDLE SIZES (based on bundlephobia.com):
@@ -73,11 +75,22 @@ RESULTS:
 
 Last version of Express.js was released *2 years ago*.
 
-Last version of Fastify.js was released *10 hours ago*. With regular updates and support from community (I also contributed to Fastify development).
+Last version of Fastify.js was released *10 hours ago* (just checked!). With regular updates and support from community (I also contributed to Fastify development).
 
+---
 
-### FINAL NOTE:
+### FINAL NOTES:
+Also I need to mention some other advantages of Fastify:
+```
+ - TypeScript support out of the box 
+ - Fastify is bundled with excellent low overhead logger 'Pino' that makes debugging a breeze
+ - Great and supportive community (I know, I already mentioned that!..)
+ - Big ecosystem with dozens of plugins for any scenario
+ - Excellent documentation with examples
+ ```
 
+---
+### P.S.
 Not sure about production stack, but in case "node-fetch", "isomorphic-fetch" or similar packages 
 are being used on back-end for making requests, performance can be increased even further by replacing 
 these packages with "Undici":
