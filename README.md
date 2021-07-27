@@ -48,7 +48,7 @@ RESULTS:
 Tested locally on:
 ```
 Macbook Air M1 with 16Gb RAM
-Node.js 16.4.2
+Node.js 16.5.0
 ```
 
 ---
@@ -62,13 +62,13 @@ Express.js:
 
 Fastify.js:
 ```
-386.8 kB Minified
-106.5 kB Minified + GZipped
+388.2 kB Minified
+107.1 kB Minified + GZipped
 ```
 
 RESULTS:
 ```
-28% decrease in bundle size
+Minified Fastify is 2x smaller.
 ```
 ---
 ### RELEASE DATES:
